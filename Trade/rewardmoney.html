@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>奖金钱包</title>
+        <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport"/>
+        <meta content="yes" name="apple-mobile-web-app-capable"/>
+        <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+        <meta content="telephone=no" name="format-detection"/>
+        <link rel="stylesheet" type="text/css" href="css/benximoney.css"/>
+        <link rel="stylesheet" type="text/css" href="css/common.css"/>
+        <script src="js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="js/common.js" type="text/javascript" charset="utf-8"></script>
+        <script src="js/rewardmoney.js" type="text/javascript" charset="utf-8"></script>
+        <script type="text/javascript">
+			check_login_state();
+		</script>
+	</head>
+	<body>
+		<div class="main_div">
+			<div class="benxi_title">
+				<img src="images/leftarrow.png" onclick="back_to_lastpage()"/>
+				<span>奖金钱包</span>
+			</div>
+			<div class="total_money">
+				<span>奖金账户： </span><span style="padding: 5px;" id="bonus_money"></span>
+			</div>
+			<div class="trading_money_list">
+				<table class="table_trading_list" id="table_reward_list">
+					<tr>
+						<th width="30%">会员</th>
+						<th width="25%">关系</th>
+						<th width="30%">预期获得</th>
+						<th width="15%">状态</th>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	get_reward_record();
+	// 触摸触发更新时间
+	$('body').on('touchend',function(){
+        set_operate_time();
+    })
+</script>

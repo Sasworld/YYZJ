@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+        <title>昱缘之家</title>
+        <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport"/>
+        <meta content="yes" name="apple-mobile-web-app-capable"/>
+        <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+        <meta content="telephone=no" name="format-detection"/>
+        <link rel="stylesheet" type="text/css" href="css/common.css"/>
+        <link rel="stylesheet" type="text/css" href="css/home.css"/>
+        <link rel="stylesheet" type="text/css" href="css/footer.css"/>
+        <script src="js/jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script>
+        <script type="text/javascript" src="js/common.js" ></script>
+		<script type="text/javascript" src="js/trade.js" ></script>
+		<script type="text/javascript" src="js/home.js" ></script>
+		<!--<!-判断用户书否登陆-->
+		<script type="text/javascript">
+			check_login_state();
+		</script>
+	</head>
+	<body style="overflow: hidden;">
+			<div class="pop_mask" id="pop_mask">
+	            	
+	        </div>
+	        <!--查看图片时的蒙版-->
+	        <div class="pop_mask_images" id="pop_mask_images">
+	        		<img src="images/quit_w.png" class="quit_img" onclick="close_pop(5)"/>
+	            	<div class="pop_img_dkcertificate">
+	            		<img src="" id="img_dkcertificate"/>
+	            	</div>
+	        </div>
+	        <!--正在加载-->
+	        <div id="tip_loading_mask" class="tip_loading_mask">
+	        </div>
+	        <div id="tip_loading_bg" class="tip_loading_bg">
+	        	<div id="tipDiv" class="tipDiv">
+				    <center><img style="width:25px;" src="images/loading.gif"></center>
+				    <div id="tipInfo" class="tipInfo"></div>
+				</div>
+	        </div>
+			<section class="main_framework">
+	            <div class="page_title">
+					<span>首页</span>
+				</div>
+	            <section class="content_view">
+	                <div class="home_page_content">
+						<ul class="home_option_btn">
+						  <li onclick="open_pop(3)">排单</li>
+						  &nbsp;&nbsp;
+						  <li onclick="open_pop(1)">客服</li>
+						  &nbsp;&nbsp;
+						  <li onclick="open_pop(2)">会员账户</li>
+						</ul>
+						<span class="order_list_title">正在进行的订单：</span>
+						<div class="ordering_details">
+							<span class="no_ordering_tips" id="no_ordering_tips">暂时还没有正在进行的订单...</span>
+							<table class="self_ordering_list" id="self_ordering_list">
+								<tr>
+									<th width="15%">编号</th>
+									<th width="20%">对方电话</th>
+									<th width="15%">金额</th>
+									<th width="25%">创建时间</th>
+									<th width="15%">类型</th>
+									<th width="15%">操作</th>
+								</tr>
+							</table>
+						</div>
+						<ul class="home_option_btn">
+						  <li onclick="window.open('benximoney.html','_self')"><a href="benximoney.html">本息钱包</a></li>
+						  &nbsp;&nbsp;&nbsp;&nbsp;
+						  <li onclick="window.open('rewardmoney.html','_self')"><a href="rewardmoney.html">奖金</a></li>
+						</ul>
+						<ul class="home_option_btn">
+						  <li onclick="window.open('team.html','_self')"><a href="team.html">团队</a></li>
+						  &nbsp;&nbsp;&nbsp;&nbsp;
+						  <li onclick="window.open('pdcoin.html','_self')"><a href="pdcoin.html">排单币</a></li>
+						</ul>
+					</div>
+					<div class="home_pop_window" id="home_pop_window_paidan">
+		            	<div class="pop_title">
+		            		<span>排单</span>
+		            		<img src="images/exit.png" onclick="close_pop(3)"/>
+		            	</div>
+		            	<div class="pop_content">
+		            		<span>输入排单金额: </span><input type="text" id="text_pd_money" value="" placeholder="金额为500的整倍数" style="padding: 3px; border: 1px solid #888; margin-top: 10px;" />
+		            		<input type="button" id="" value="提交" class="submit_paidan_btn btn_color" onclick="submit_paidan()"/>
+		            	</div>
+			　　　　　　<div class="pop_tips">
+							<p>提交将扣除1%的手续费，请确认排单币充足！</p>
+			　　　　　　</div>
+		            </div>
+		            <div class="home_pop_window" id="home_pop_window_account">
+		            	<div class="pop_title">
+		            		<span>会员账户</span>
+		            		<img src="images/exit.png" onclick="close_pop(2)"/>
+		            	</div>
+		            	<div class="pop_content">
+		            		<span>您的账户: </span><span style="border: 1px solid black; padding: 3px;" id="user_account"></span>
+		            	</div>
+			　　　　　　<div class="pop_tips">
+							<p></p>
+			　　　　　　</div>
+		            </div>
+		            <div class="home_pop_window" id="home_pop_window_kefu">
+		            	<div class="pop_title">
+		            		<span>注意</span>
+		            		<img src="images/exit.png" onclick="close_pop(1)"/>
+		            	</div>
+		            	<div class="pop_content">
+		            		<span>官方客服微信号: </span><span style="border: 1px solid black; padding: 3px;" id="kefu_wechat"></span>
+		            	</div>
+			　　　　　　<div class="pop_tips">
+							<p>请仔细核对微信号，防止骗子！</p>
+			　　　　　　</div>
+		          	</div>
+		          	<!--进行中的订单详情-->
+		          	<div class="home_ordering_pop_window" id="home_pop_window_order_detail">
+		          		<div class="pop_detial_title">
+			            	<div class="buy_sell_detail_tips">
+			            		<span style="display: block; font-size: 3vw;color: #666;">订单号<span id="sell_orderid">161497772</span>(匹配排单号<span id="sell_paidanid">2010427011</span>)</span>
+			            		<span style="font-size: 5vw; float: left; display: inline;margin-top: 10px;width: 20%;" id="certain_state">待确认</span>
+			            		<div style="float: left; margin-left: 5px; width: 75%;">
+			            			<span style="font-size: 5vw;" id="dk_money_info"></span><br />
+			            			<span style="font-size: 3vw;color: #666;" id="order_date"></span>
+			            		</div>
+			            	</div>
+			            	<img src="images/exit.png" onclick="close_pop(4)"/>
+		            	</div>
+		            	<span style="margin-top: 5px;display: block;margin-left: 10px;font-size: 3.5vw;" >打款人：<span id="buyer_name"></span></span>
+		            	<span style="display: block;margin-left: 10px;font-size: 3.5vw;" >打款人领导人：<span id="buyer_parent_name"></span></span>
+		            	<div class="pop_user_info">
+		            		<span>银行：<span style="display: inline;" id="text_bank"></span></span>
+		            		<span>卡号：<input type="text" id="text_bank_number" value="" class="input_banknumber" readonly="readonly"/><p class="copy_bank_number text_color" id="copy_bank_number" onclick="copy_banknumber()"/>复制</p></span>
+		            		<span>支行：<span style="display: inline;" id="text_bank_zhihang"></span></span>
+		            		<span>持有人：<span style="display: inline;" id="text_bank_owner"></span></span>
+		            		<span>支付宝：<span style="display: inline;" id="text_bank_alipay"></span></span>
+		            		<span><span style="display: inline;" id="text_bank_remarks"></span></span>
+		            	</div>
+		            	<span style="margin-top: 5px;display: block;margin-left: 10px;font-size: 3.5vw;">收款人：<span id="seller_name"></span></span>
+		            	<span style="display: block;margin-left: 10px;font-size: 3.5vw;">收款人领导人：<span id="seller_parent_name"></span></span>
+		            	<span style="margin-left: 10px;font-size: 3.5vw;display: none;" id="text_dkdate"></span>
+		            	<input type="file" name="file_certificate" id="file_certificate" class="choose_file" accept="image/gif,image/png,image/jpg,image/jpeg" >
+		            	<input type="button" id="sell_pop" value="查看打款凭证" class="check_pz_btn" onclick="check_dkcertificate(this)" />
+		            	<input type="button" id="upload_certificate_btn" value="提交打款凭证" class="check_pz_btn" onclick="upload_dkcertificate()" style="display: none;"/>
+					    <input type="button" id="certain_shoukuan_btn" value="确认收款" class="check_pz_btn" style="display: none;" onclick="confirm_receipt()" />
+		          	</div>
+	            </section>
+	          	<section class="footer_view">
+		            <footer class="aui-footer aui-footer-fixed">
+			            <a href="home.html" class="aui-tabBar-item">
+			                <span class="aui-tabBar-item-icon">
+			                    <i class="icon icon-home-selected"></i>
+			                </span>
+			                <span class="footer_tabbar_text_selected">首页</span>
+			            </a>
+			            <a href="trade.html" class="aui-tabBar-item">
+			                <span class="aui-tabBar-item-icon">
+			                    <i class="icon icon-trade"></i>
+			                </span>
+			                <span class="footer_tabbar_text">交易区</span>
+			            </a>
+			            <!--<a href="data.html" class="aui-tabBar-item ">
+			                <span class="aui-tabBar-item-icon">
+			                    <i class="icon icon-data"></i>
+			                </span>
+			                <span class="footer_tabbar_text">数据区</span>
+			            </a>-->
+			            <a href="mine.html" class="aui-tabBar-item">
+			                <span class="aui-tabBar-item-icon">
+			                    <i class="icon icon-mine"></i>
+			                </span>
+			                <span class="footer_tabbar_text">我的</span>
+			            </a>
+		        	</footer>
+	        	</section>
+	        </section>
+	</body>
+</html>
+<script type="text/javascript">
+	get_ordering_info();
+	
+	// 触摸触发更新时间
+	$('body').on('touchend',function(){
+        set_operate_time();
+    })
+</script>

@@ -1,0 +1,61 @@
+.page_title{
+	font-size: 12vw;
+	text-align: center;
+	color: #FF9900;
+	margin-top: 80px;
+}
+
+.main_div_login{
+	margin-top: 60px;
+}
+
+.login_info{
+	width: 92%;
+	margin: 0 auto;
+	overflow: hidden;
+	font-size: 1em;
+	border-radius: 5px;
+	background-color: white;
+	border: 1px solid #666;
+	line-height: 40px;
+	padding-left: 10px;
+	margin-top: 10px;
+}
+
+.login_info span{
+	color: #666;
+}
+
+.login_info input{
+	font-size: 1em;
+	border: 0px;
+	outline: none;
+}
+
+.verification_code{
+	width: 150px;
+	height: 50px;
+	cursor: pointer;
+	margin: 0 auto;
+	margin-top: 10px;
+	display: block;
+}
+.remember_pw{
+	font-size: 1em;
+	color: white;
+	margin-top: 10px;
+	margin-left: 10px;
+}
+
+.login_btn{
+	background-color: #FF9900;
+	color: white;
+	display: block;
+	margin: 0 auto;
+	font-size: 1em;
+	padding: 10px;
+	border: 0px;
+	margin-top: 10px;
+	width: 80%;
+	cursor: pointer;
+}

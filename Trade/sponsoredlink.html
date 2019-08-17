@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>推广链接</title>
+        <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport"/>
+        <meta content="yes" name="apple-mobile-web-app-capable"/>
+        <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+        <meta content="telephone=no" name="format-detection"/>
+        <link rel="stylesheet" type="text/css" href="css/common.css"/>
+        <link rel="stylesheet" type="text/css" href="css/sponsoredlink.css"/>
+        <script src="js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="js/common.js" type="text/javascript" charset="utf-8"></script>
+        <script src="js/sponsoredlink.js" type="text/javascript" charset="utf-8"></script>
+        <script type="text/javascript">
+			check_login_state();
+		</script>
+	</head>
+	<body>
+		<div class="main_div">
+			<div class="page_title">
+				<img src="images/leftarrow.png" onclick="back_to_lastpage()"/>
+				<span>推广链接</span>
+			</div>
+			<div class="sponsored_content">
+				<span>推广链接： </span>
+				<textarea rows="5" class="textarea_link text_color" id="text_spd_link" disabled="disabled">
+					
+				</textarea>
+			</div>
+			<input type="button" id="copy_link" value="复制推广链接" class="submit_btn" onclick="copy_link()"/>
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	generate_link();
+	// 触摸触发更新时间
+	$('body').on('touchend',function(){
+        set_operate_time();
+    })
+</script>

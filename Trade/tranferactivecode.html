@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>激活码</title>
+        <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport"/>
+        <meta content="yes" name="apple-mobile-web-app-capable"/>
+        <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+        <meta content="telephone=no" name="format-detection"/>
+        <link rel="stylesheet" type="text/css" href="css/common.css"/>
+        <link rel="stylesheet" type="text/css" href="css/tranferactivecode.css"/>
+        <script src="js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="js/common.js" type="text/javascript" charset="utf-8"></script>
+        <script src="js/tranferactivecode.js" type="text/javascript" charset="utf-8"></script>
+        <script type="text/javascript">
+			check_login_state();
+		</script>
+	</head>
+	<body>
+		<!--正在加载-->
+        <div id="tip_loading_mask" class="tip_loading_mask">
+        </div>
+        <div id="tip_loading_bg" class="tip_loading_bg">
+        	<div id="tipDiv" class="tipDiv">
+			    <center><img style="width:25px;" src="images/loading.gif"></center>
+			    <div id="tipInfo" class="tipInfo"></div>
+			</div>
+        </div>
+		<div class="main_div">
+			<div class="page_title">
+				<img src="images/leftarrow.png" onclick="back_to_lastpage()"/>
+				<span>激活码转账</span>
+			</div>
+			<div class="tranfer_active_code">
+				<div class="tranfer_content">
+					<span>激活码： </span><span style="margin-left: 10px;" id="active_code_amount"></span>
+					<div class="tranfer_user_name">
+						<span>用户名： </span><input type="text" name="" id="text_to_uname" value="" placeholder="对方账户" />
+					</div>
+					<div class="tranfer_amount">
+						<span>激活码： </span><input type="text" name="" id="text_to_active_code" value="" placeholder="转账数量" />
+					</div>
+				</div>
+				<input type="button" id="tranfer_acode_btn" value="提交" class="submit_btn" onclick="acode_tranfer()"/>
+			</div>
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	get_ac_code();
+	// 触摸触发更新时间
+	$('body').on('touchend',function(){
+        set_operate_time();
+    })
+</script>

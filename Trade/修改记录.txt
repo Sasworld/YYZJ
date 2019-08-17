@@ -1,0 +1,22 @@
+3.4
+修改jiaoge.php
+$end_time = "18:00:00"; ====> $end_time = "21:00:00";
+
+修改trade.js
+var end_time = '18:00:00'; ====> var end_time = '21:00:00';
+
+修改paidan.php
+if($res_query_pd->num_rows == 0 && ($pdamount < 1000 || $pdamount > 5000)){
+	$arr = array(
+		'result'=>"首次排单，金额必须为：1000-5000",
+	);
+}
+==========================>
+if($res_query_pd->num_rows == 0 && ($pdamount < 1000 || $pdamount > 10000)){
+	$arr = array(
+		'result'=>"首次排单，金额必须为：1000-10000",
+	);
+}
+
+修改数据库数据：
+user中所有用户的星级加5，且初始值设置为10

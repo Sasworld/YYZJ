@@ -1,0 +1,26 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script src="js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+	 	<div class="share-box">
+		  <input type="text" class="share-link" value="分享链接" />
+		  <button class="share-btn">分享</button>
+		  <button class="copy-link">复制链接</button>
+		</div>
+	</body>   
+</html>
+<script type="text/javascript">
+	$('.copy-link').on('click', function() {
+		var input = document.createElement("input");
+        //只需要改变取值方式即可
+        input.value = $('.share-link').val();
+        document.body.appendChild(input);
+        input.select();
+        input.setSelectionRange(0, input.value.length), document.execCommand('Copy');
+        document.body.removeChild(input);
+	});
+</script>

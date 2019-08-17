@@ -1,0 +1,23 @@
+.div_my_info{
+	margin: 10px;
+	margin-top: 20px;
+	height: 100%;
+}
+
+.div_my_info ul li{
+	border-radius: 5px;
+	background-color: white;
+	margin-top: 10px;
+	padding: 10px;
+	color: #333;
+	display: flex;
+}
+
+.div_my_info ul li p{
+	display: inline;
+	flex: 1;
+}
+
+.div_my_info ul li span{
+	flex: 2;
+}

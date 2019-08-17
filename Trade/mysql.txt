@@ -1,0 +1,2 @@
+// 创建定时任务
+CREATE event IF NOT EXISTS auto_confirm_sk ON SCHEDULE EVERY 4 HOUR ON COMPLETION PRESERVE DO update orderform set finishstate='2';

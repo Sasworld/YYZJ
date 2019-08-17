@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>昱缘之家</title>
+        <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport"/>
+        <meta content="yes" name="apple-mobile-web-app-capable"/>
+        <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+        <meta content="telephone=no" name="format-detection"/>
+        <link rel="stylesheet" type="text/css" href="css/login.css"/>
+        <script type="text/javascript" src="js/jquery-3.3.1.min.js" ></script>
+        <script type="text/javascript" src="js/jquery.cookie.js" ></script>
+        <script type="text/javascript" src="js/common.js" ></script>
+        <script type="text/javascript" src="js/login.js" ></script>
+        <script type="text/javascript">
+        	if (isMobile() == true) {
+        		localStorage.clear(); // 进入登陆界面清除所有数据
+			} else{
+				window.location.href="usemobile.html";
+			}
+        	//退出账户
+        </script>
+	</head>
+	<body style="background-color: #000000;">
+		<div class="page_title">
+			<span>昱缘之家</span>
+		</div>
+		<div class="main_div_login">
+			<div class="login_info">
+				<span>账号：</span>
+				<input type="text" id="text_uname" value=""/>
+			</div>
+			<div class="login_info">
+				<span>密码：</span>
+				<input type="password" id="text_pw" value=""/>
+			</div>
+			<div class="login_info">
+				<span>验证码：</span>
+				<input type="text" id="text_vcode" value=""/>
+			</div>
+			<canvas id="canvas" class="verification_code"></canvas>
+			<div class="submit_login">
+				<input type="button" id="login_sys" value="登  陆" class="login_btn" onclick="check_login()"/>
+			</div>
+		</div>
+	</body>
+</html>
+<script>
+	validate_code = drawPic();
+    //先阻止画布默认点击发生的行为再执行drawPic()方法
+    document.getElementById("canvas").onclick = function(e){
+        e.preventDefault();
+        validate_code = drawPic();
+    };
+</script>

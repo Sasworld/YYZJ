@@ -1,0 +1,208 @@
+.trade_aera_content{
+	width: 92%;
+	height: 100%;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	overflow-y: hidden;
+}
+
+.ul_trade_nav_bar{
+	display: flex;
+	flex: 1;
+}
+
+.ul_trade_nav_bar li{
+	text-align: center;
+	flex: 1;
+	font-size: 18px;
+}
+
+.active_trade_bar{
+	color: #FF9900;
+}
+
+.trade_page1{
+	flex: 15;
+	background-color: white;
+	margin-top: 20px;
+	border-radius: 10px;
+	padding: 20px;
+	overflow-y: scroll;
+}
+
+.trade_order_list{
+	border-spacing:0px 10px;
+	border: 0px solid #b5b5b5;
+	text-align: center;
+	font-size: 1vw;
+	width: 100%;
+}
+
+.trade_order_list tr{
+	
+}
+
+.trade_order_list th{
+	font-size: 3vw;
+}
+
+.trade_order_list td{
+	font-size: 2.5vw;
+	color: #979797;
+}
+
+.btn_trade_submit{
+	background-color: #999;
+	color: white;
+	font-size: 2vm;
+	text-align: center;
+	padding: 2px;
+	padding-left: 6px;
+	padding-right: 6px;
+	border: 0px;
+	border-radius: 3px;
+}
+
+
+.trade_page2{
+	flex: 15;
+	background-color: white;
+	margin-top: 20px;
+	border-radius: 10px;
+	padding: 20px;
+	display: none;
+	overflow-y: scroll;
+}
+
+.trade_page3{
+	flex: 15;
+	background-color: white;
+	margin-top: 20px;
+	border-radius: 10px;
+	padding: 20px;
+	display: none;
+	overflow: hidden;
+}
+
+.div_page3_table{
+	width: 100%;
+	overflow-y: scroll;
+	height: 80%;
+	margin-top: 10%;
+	display: none;
+}
+
+.trade_page3 span{
+	color: orange;
+	font-size: 3.5vw;
+	margin-left: 20px;
+}
+
+.search_account{
+	margin-top: 20px;
+}
+
+.search_account_p{
+	font-size: 2.5vw;
+	color: #000000;
+	display: inline;
+}
+
+.search_account_text{
+	height: 30px;
+	width: 45%;
+	font-size: 3vw;
+	border: 1px solid #737373;
+	margin-left: 10px;
+	padding: 5px;
+}
+
+.search_account_btn{
+	color: white;
+	background-color: #999;
+	font-size: 3vw;
+	float: right;
+	width: 20%;
+	border: 0px;
+	padding: 5px;
+}
+
+/*交割弹出框*/
+
+.pop_mask{
+	position: absolute;
+	background-color: #000;
+	z-index: 99;
+	opacity: 0.3;
+	height: 100%;
+	width: 100%;
+	display: none;
+}
+
+.trade_pop_window{
+	position: absolute;
+	width: 90%;
+	top: 35%;
+	left: 5%;
+	background-color: white;
+	border: 1px solid #666;
+	padding: 0px;
+	z-index: 100;
+	display: none;
+}
+
+.pop_title{
+	background-color: #f3f3f3;
+	color: #666;
+	font-size: 1.1em;
+	line-height: 40px;
+	padding-left: 10px;
+}
+
+.pop_title img{
+	width: 30px;
+	height: 30px;
+	float: right;
+	margin-top: 5px;
+	margin-right: 5px;
+}
+
+.jg_info{
+	padding: 10px;
+	margin-left: 10px;
+	margin-top: 10px;
+	font-size: 1em;
+}
+
+.pop_content{
+	margin-top: 10px;
+	margin-left: 10px;
+	padding: 10px;
+	font-size: 1em;
+	color: #333;
+	width: 100%;
+}
+
+.pop_content span{
+	display: inline;
+	margin-left: 0px;
+}
+
+.submit_jg_btn{
+	padding: 3px;
+	padding-left: 10px;
+	padding-right: 10px;
+	background-color: #FF9900;
+	color: white;
+	border: 0px;
+	margin: 0 auto;
+	display: block;
+	margin-top: 10px;
+}
+
+.pop_tips{
+	text-align: center;
+	font-size: 0.8em;
+	color: #888;
+}

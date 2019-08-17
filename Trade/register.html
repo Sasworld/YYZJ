@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>新用户注册</title>
+        <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport"/>
+        <meta content="yes" name="apple-mobile-web-app-capable"/>
+        <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+        <meta content="telephone=no" name="format-detection"/>
+        <link rel="stylesheet" type="text/css" href="css/register.css"/>
+        <script type="text/javascript" src="js/jquery-3.3.1.min.js" ></script>
+        <script src="js/common.js" type="text/javascript" charset="utf-8"></script>
+        <script src="js/register.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body style="background-color: #032352;">
+		<div class="page_title">
+			<span>会员注册</span>
+		</div>
+		<div class="main_div_reg">
+			<div class="register_base_info">
+				<input type="text" id="uname" value="" placeholder="账号"/>
+				<input type="text" id="uid" value="" placeholder="手机号"/>
+				<input type="password" id="pw" value="" placeholder="密码"/>
+				<input type="password" id="repw" value="" placeholder="确认密码"/>
+				<input type="text" id="parentid" value="" placeholder="推荐人手机号" readonly="readonly"/>
+			</div>
+			
+			<div class="register_base_info">
+				<div class="bank_info_title">
+					<span>绑定银行卡信息：</span>
+				</div>
+				<select name="" id="bank">
+					<option></option>
+					<option value="">交通银行</option><option value="">建设银行</option><option value="">招商银行</option>
+					<option value="">农业银行</option><option value="">民生银行</option><option value="">浦发银行</option>
+					<option value="">工商银行</option><option value="">中国银行</option><option value="">邮政储蓄</option>
+					<option value="">光大银行</option><option value="">平安信用</option><option value="">中信银行</option>
+					<option value="">华夏银行</option><option value="">兴业银行</option><option value="">广发银行</option>
+					<option value="">北京银行</option>
+				</select>
+				<input type="text" id="banknumber" value="" placeholder="卡号"/>
+				<input type="text" id="subbank" value="" placeholder="支行名称"/>
+				<input type="text" id="owner" value="" placeholder="持卡人"/>
+				<input type="text" id="alipay" value="" placeholder="支付宝"/>
+			</div>
+			<div class="submit_reg">
+				<div class="warning_info">
+					<input type="checkbox" name="" id="know_risk" value="" />
+					<span>我已读过警告，并完全了解风险的存在且愿意承担可能的风险。</span>
+				</div>
+				<input type="button" id="" value="提交注册" class="reg_submit_btn" onclick="submit_reg_info()"/>
+			</div>
+		</div>
+	</body>
+</html>
+<script>
+    $(document).ready(function() {
+		var curr_url = decodeURI(window.location.href);
+		var parentid = getUid(curr_url);
+		$('#parentid').val(parentid);
+		$('#parentid').attr("disabled","disabled");
+	});
+</script>

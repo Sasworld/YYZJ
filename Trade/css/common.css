@@ -1,0 +1,256 @@
+/*清除默认样式*/
+html,body {
+    color: #333;
+    margin: 0;
+    height: 100%;
+    font-family: "Myriad Set Pro","Helvetica Neue",Helvetica,Arial,Verdana,sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: normal;
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+a, label, button, input, select {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+img {
+    border: 0;
+}
+
+body {
+    background: #000000;
+    color: #666;
+}
+
+html, body, div, dl, dt, dd, ol, ul, li, h1, h2, h3, h4, h5, h6, p, blockquote, pre, button, fieldset, form, input, legend, textarea, th, td {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #08acee;
+}
+
+button {
+    outline: 0;
+}
+
+img {
+    border: 0;
+}
+
+button,input,optgroup,select,textarea {
+    margin: 0;
+    font: inherit;
+    color: inherit;
+    outline: none;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    color: #666;
+}
+/*统一按钮颜色*/
+.btn_color{
+	background-color: #FF9900;
+}
+/*统一字体颜色*/
+.text_color{
+	color: #FF9900;
+}
+/*统一背景颜色*/
+.bg_color{
+	background-color: #000000;
+}
+/*整体框架*/
+/* 必要布局样式css */
+.main_framework {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    /*background-color: #032352;*/
+   background-color: #000000;
+    overflow-y: hidden;
+}
+.content_view {
+    width: 100%;
+    height: 100%;
+    -webkit-box-flex: 7;
+    -webkit-flex: 7;
+    -ms-flex: 7;
+    flex: 7;
+    overflow-y: auto;
+    overflow-x: hidden;
+    /*-webkit-overflow-scrolling: touch;*/
+    position: relative;
+    padding-top: 20px;
+}
+
+.footer_view{
+	flex: 1;
+}
+
+/*===================== 共用样式 =====================*/
+
+/*页面标题*/
+.page_title{
+	font-size: 1.5em;
+	text-align: center;
+	color: #FF9900;
+	margin-top: 20px;
+	line-height: 30px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+.page_title img{
+	position: absolute;
+	left: 2%;
+	width: 25px;
+	height: 25px;
+}
+
+/*菜单*/
+.item_list{
+	width: 92%;
+	margin: 0 auto;
+}
+
+.one_item{
+	display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    padding: 10px;
+    position: relative;
+    background-color: white;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.icon_in_item{
+	width: 25px;
+	height: 25px;
+	margin-right: 0.5rem;
+}
+
+.icon_in_item img {
+    width: 25px;
+    height: 25px;
+    display: block;
+    border: none;
+}
+
+.text_in_item{
+	-webkit-box-flex: 1;
+    -webkit-flex: 1;
+	flex: 1;
+    min-width: 0;
+    font-size: 14px;
+    color: #333;
+}
+
+.text_in_item h2 {
+    font-size: 0.85rem;
+    font-weight: normal;
+}
+
+.tip_in_item p {
+    font-size: 0.8rem;
+    color: #999;
+}
+
+.tip_in_item button {
+    background: #00c98d;
+    color: #fff;
+    font-size: 0.8rem;
+    border-radius: 3px;
+    border: none;
+    padding: 0.2rem 0.8rem;
+}
+
+/*.tip_in_item:after {
+    content: " ";
+    display: inline-block;
+    height: 7px;
+    width: 7px;
+    border-width: 2px 2px 0 0;
+    border-color: #c7c7cc;
+    border-style: solid;
+    -webkit-transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+    transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+    position: relative;
+    top: -2px;
+    position: absolute;
+    top: 50%;
+    margin-top: -5px;
+    right: 1px;
+    border-radius: 1px;
+}*/
+
+.submit_btn{
+	display: block;
+	margin: 0 auto;
+	padding: 5px;
+	padding-left: 25px;
+	padding-right: 25px;
+	background-color: #FF9900;
+	color: white;
+	border: 0px;
+	margin-top: 20px;
+}
+
+.tip_loading_mask{
+	position: absolute;
+	background-color: white;
+	z-index: 999;
+	opacity: 0;
+	height: 100%;
+	width: 100%;	
+	display: none;
+}
+.tip_loading_bg{
+	position: absolute;
+	z-index: 1000;
+	height: 100%;
+	width: 100%;
+	display: none;
+}
+
+.tipDiv{
+	margin: 0 auto;
+	background: #d9d9d9;
+	padding: 10px;
+	border-radius: 5px;
+	text-align: center;
+	margin-top: 60%;
+	width: 150px;
+	opacity: 1;
+}
+.tipInfo{
+	margin-top: 10px;
+	font-size: 3vw;
+}

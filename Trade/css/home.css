@@ -1,0 +1,290 @@
+.page_logo{
+	position: fixed;
+	width: 100px;
+	height: 30px;
+	top: 0px;
+	left: 0px;
+}
+.home_page_content{
+	width: 100%;
+	height: 100%;
+}
+
+.home_option_btn{
+	display: flex;
+	margin: 10px;
+}
+
+.home_option_btn li{
+	text-align: center;
+	flex: 1;
+	background-color: #999;
+	color: #efefef;
+	padding: 10px;
+	border-radius: 10px;
+}
+
+.home_option_btn li a{
+	color: #efefef;
+}
+
+.order_list_title{
+	color: #FF9900;
+	font-size: 5vw;
+	margin-top: 20px;
+	display: block;
+	margin-left: 4%;
+}
+
+.ordering_details{
+	width: 92%;
+	background-color: white;
+	height: 50%;
+	margin-bottom: 50px;
+	padding-top: 10px;
+	margin: 0 auto;
+	overflow-y: scroll;
+}
+
+.no_ordering_tips{
+	font-size: 5vw;
+	color: #FF9900;
+	display: block;
+	margin-left: 10px;
+}
+
+.self_ordering_list{
+	display: none;
+	border-spacing:0px 10px;
+	border: 0px solid #b5b5b5;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.self_ordering_list tr{
+}
+
+.self_ordering_list th{
+	font-size: 3.5vw;
+}
+
+.self_ordering_list td{
+	font-size: 2.5vw;
+	color: #979797;
+}
+
+.pop_mask{
+	position: absolute;
+	background-color: #000;
+	z-index: 10;
+	opacity: 0.5;
+	height: 100%;
+	width: 100%;
+	display: none;
+}
+
+.pop_mask_images{
+	position: absolute;
+	background-color: #666;
+	z-index: 20;
+	opacity: 1;
+	height: 100%;
+	width: 100%;
+	display: none;
+}
+
+.quit_img{
+	float: right;
+	margin-right: 10px;
+	margin-top: 10px;
+	width: 30px;
+	height: 30px;
+}
+/*查看打款凭证*/
+.pop_img_dkcertificate{
+	position: absolute;
+	z-index: 30;
+	height: 60%;
+	width: 100%;
+	margin-top: 30%;
+}
+.pop_img_dkcertificate img{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	margin: 0 auto;
+	display: block;
+	z-index: 40;
+}
+
+.home_pop_window{
+	position: absolute;
+	width: 90%;
+	top: 40%;
+	left: 5%;
+	background-color: white;
+	border: 1px solid #666;
+	padding: 0px;
+	z-index: 11;
+	display: none;
+}
+
+/*@media screen and (-wedkit-min-device-pixel-ratio: 0) {
+	.pop_mask{
+		position: absolute;
+		background-color: #000;
+		z-index: 10;
+		opacity: 0.5;
+		height: 100%;
+		width: 100%;
+		display: none;
+	}
+	
+	.home_pop_window{
+		position: absolute;
+		width: 90%;
+		top: 40%;
+		left: 5%;
+		background-color: white;
+		border: 1px solid #666;
+		padding: 0px;
+		z-index: 111;
+		display: none;
+	}
+}*/
+
+.pop_title{
+	background-color: #f3f3f3;
+	color: #666;
+	font-size: 1.1em;
+	line-height: 40px;
+	padding-left: 10px;
+}
+
+.pop_title img{
+	width: 30px;
+	height: 30px;
+	float: right;
+	margin-top: 5px;
+	margin-right: 5px;
+}
+
+.pop_content{
+	margin-top: 20px;
+	padding: 10px;
+	font-size: 1.1em;
+	text-align: center;
+	color: #333;
+}
+
+.pop_content span{
+	display: inline;
+	margin-left: 0px;
+}
+
+.pop_tips{
+	text-align: center;
+	font-size: 0.8em;
+	color: #888;
+}
+
+.submit_paidan_btn{
+	display: block;
+	margin: 0 auto;
+	margin-top: 20px;
+	padding: 3px;
+	padding-left: 30px;
+	padding-right: 30px;
+	color: white;
+	font-size: 1em;
+	border: 0px;
+}
+
+/*订单详情弹窗*/
+
+.home_ordering_pop_window{
+	position: absolute;
+	width: 90%;
+	top: 20%;
+	left: 5%;
+	background-color: #ddd;
+	border: 1px solid #666;
+	padding: 0px;
+	z-index: 13;
+	display: none;
+	border-radius: 10px;
+}
+
+.pop_detial_title{
+	width: 100%;
+	background-color: orange;
+	color: black;
+	overflow: hidden;
+	border-radius: 10px;
+	box-shadow:0px 5px 5px #aaa;
+}
+
+.buy_sell_detail_tips{
+	width: 95%;
+	float: left;
+	padding: 10px;
+}
+
+.pop_detial_title img{
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	width: 25px;
+	height: 25px;
+	float: right;
+}
+
+.pop_user_info{
+	background-color: white;
+	padding: 10px;
+	margin: 10px;
+	border-radius: 10px;
+	box-shadow:0px 5px 5px #aaa;
+}
+
+.pop_user_info span{
+	display: block;
+	font-size: 4vw;
+}
+
+.check_pz_btn{
+	background-color: #FF9900;
+	color: white;
+	border: 0px;
+	padding: 10px;
+	padding-left: 15px;
+	padding-right: 15px;
+	margin-left: 10px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	border-radius: 5px;
+	font-size: 4.5vw;
+}
+
+.choose_file{
+	margin: 10px;
+	width: 60%;
+	background-color: #FF9900;
+	color: white;
+}
+
+.input_banknumber{
+	display: inline;
+	border: 0px;
+	font-size: 3vw;
+}
+.copy_bank_number{
+	padding-bottom: 5px;
+	padding-left: 5px;
+	padding-right: 5px;
+	font-size: 3vw;
+	margin-left: 10px;
+	border: 0px;
+	background-color: white;
+	display: inline;
+}

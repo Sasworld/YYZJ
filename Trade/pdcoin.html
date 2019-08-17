@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>排单币</title>
+        <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport"/>
+        <meta content="yes" name="apple-mobile-web-app-capable"/>
+        <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+        <meta content="telephone=no" name="format-detection"/>
+        <link rel="stylesheet" type="text/css" href="css/benximoney.css"/>
+        <link rel="stylesheet" type="text/css" href="css/common.css"/>
+        <script src="js/common.js" type="text/javascript" charset="utf-8"></script>
+        <script src="js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+        <script type="text/javascript">
+			check_login_state();
+		</script>
+	</head>
+	<body>
+		<div class="main_div">
+			<div class="benxi_title">
+				<img src="images/leftarrow.png" onclick="back_to_lastpage()"/>
+				<span>排单币</span>
+			</div>
+			<div class="total_money">
+				<span>排单币余额： </span><span style="padding: 5px;" id="pdcoin_amount"></span>
+			</div>
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	var curr_user = get_curr_user();
+	// flags:2 查询用户表  queryid:1 只查询排单币
+	var user_info = {"flags":"2", "uid":curr_user, "queryid":"1"};
+	$.ajax({
+        type: "POST",
+        url: "php/querydata.php" ,
+        data: {datas:JSON.stringify(user_info)},
+        dataType: "json",
+        contentType: "application/x-www-form-urlencoded; charset=utf-8",//设置字符集
+        success: function(json) {
+            if(json.paidancoin == "F"){
+            	alert("发生未知错误，请稍后重试");
+            }else{
+            	pdcoin_amount = json.paidancoin;
+            	$('#pdcoin_amount').text(pdcoin_amount);
+            }
+        }
+    });
+    
+    // 触摸触发更新时间
+	$('body').on('touchend',function(){
+        set_operate_time();
+    })
+</script>

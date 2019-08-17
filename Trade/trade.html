@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport"/>
+        <meta content="yes" name="apple-mobile-web-app-capable"/>
+        <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+        <meta content="telephone=no" name="format-detection"/>
+		<link rel="stylesheet" type="text/css" href="css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="css/trade.css"/>
+		<link rel="stylesheet" type="text/css" href="css/footer.css"/>
+        <script src="js/jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script>
+        <script type="text/javascript" src="js/common.js" ></script>
+        <script type="text/javascript" src="js/trade.js" ></script>
+        <script type="text/javascript">
+			check_login_state();
+		</script>
+	</head>
+	<body>
+		<div class="pop_mask" id="pop_mask">
+            	
+        </div>
+        <!--正在加载-->
+        <div id="tip_loading_mask" class="tip_loading_mask">
+        </div>
+        <div id="tip_loading_bg" class="tip_loading_bg">
+        	<div id="tipDiv" class="tipDiv">
+			    <center><img style="width:25px;" src="images/loading.gif"></center>
+			    <div id="tipInfo" class="tipInfo"></div>
+			</div>
+        </div>
+		<section class="main_framework">
+			<div class="page_title">
+				<span>交易区</span>
+			</div>
+            <section class="content_view">
+				<div class="trade_aera_content" id="trade_aera_content"> 
+					<ul class="ul_trade_nav_bar" id="ul_trade_nav_bar">
+					  <li class="active_trade_bar" onclick="switch_bar(this)">优选区</li>
+					  <li onclick="switch_bar(this)">随机区</li>
+					  <li onclick="switch_bar(this)">自选区</li>
+					</ul>
+					<!--页面1 默认显示-->
+					<div class="trade_page1" id="trade_page1">
+						<table class="trade_order_list" id="table_priority_area">
+							<tr>
+								<th width="15%">编号</th>
+								<th width="20%">账号</th>
+								<th width="20%">快抢手</th>
+								<th width="15%">电话</th>
+								<th width="15%">金额</th>
+								<th width="15%">操作</th>
+							</tr>
+						</table>
+					</div>
+					<div class="trade_page2" id="trade_page2">
+						<!--页面2 默认关闭-->
+						<table class="trade_order_list" id="table_random_area">
+							<tr>
+								<th width="15%">编号</th>
+								<th width="20%">账号</th>
+								<th width="20%">快抢手</th>
+								<th width="15%">电话</th>
+								<th width="15%">金额</th>
+								<th width="15%">操作</th>
+							</tr>
+						</table>
+					</div>
+					<!--交易页面3-->
+					<div class="trade_page3" id="trade_page3">
+						<span>距离下次可交割倒计时: <span id="text_jg_tip"></span></span>
+						<div class="search_account">
+							<p class="search_account_p">请输入账号:</p>
+							<input type="text" class="search_account_text" id="text_search_key_words" />
+							<input type="button" class="search_account_btn" value="搜 索" onclick="search_paidan()"/>
+						</div>
+						<div class="div_page3_table" id="div_page3_table">
+							<table class="trade_order_list" style="margin-top: 10px;" id="table_search_area">
+								<tr>
+									<th width="15%">编号</th>
+									<th width="20%">账号</th>
+									<th width="20%">快抢手</th>
+									<th width="15%">电话</th>
+									<th width="15%">金额</th>
+									<th width="15%">操作</th>
+								</tr>
+							</table>
+						</div>
+						
+					</div>
+				</div>
+				<div class="trade_pop_window" id="trade_pop_window_jiaoge">
+	            	<div class="pop_title">
+	            		<span>交割</span>
+	            		<img src="images/exit.png" onclick="close_pop()"/>
+	            	</div>
+	            	<div class="jg_info">
+	            		<span>交割对象：</span><span id="jiaoge_people"></span><br />
+	            	</div>
+	            	<div class="pop_content">
+	            		<span>输入交割金额: </span>
+	            		<input type="text" id="text_jiaoge_money" value="" placeholder="金额为100的整倍数" style="padding: 5px; border: 1px solid #888; margin-top: 10px; font-size: 0.8em;" /><br /><br />
+	            		<input type="checkbox" name="pay_by_reward" id="pay_by_reward" value="" /><span style="margin-left:10px; color: #FF9900;" id="text_reward_pay">奖金支付</span>
+	            		<input type="button" id="" value="提交" class="submit_jg_btn"onclick="sumbit_jiaoge()" />
+	            	</div>
+		　　　　　　<div class="pop_tips">
+						<p>提交后将立马扣除您的积分，交易进入打款环节！</p>
+		　　　　　　</div>
+	            </div>
+		    </section>
+	        <section class="footer_view">
+                <footer class="aui-footer aui-footer-fixed">
+		            <a href="home.html" class="aui-tabBar-item">
+		                <span class="aui-tabBar-item-icon">
+		                    <i class="icon icon-home"></i>
+		                </span>
+		                <span class="footer_tabbar_text">首页</span>
+		            </a>
+		            <a href="trade.html" class="aui-tabBar-item">
+		                <span class="aui-tabBar-item-icon">
+		                    <i class="icon icon-trade-selected"></i>
+		                </span>
+		                <span class="footer_tabbar_text_selected">交易区</span>
+		            </a>
+		            <!--<a href="data.html" class="aui-tabBar-item ">
+		                <span class="aui-tabBar-item-icon">
+		                    <i class="icon icon-data"></i>
+		                </span>
+		                <span class="footer_tabbar_text">数据区</span>
+		            </a>-->
+		            <a href="mine.html" class="aui-tabBar-item">
+		                <span class="aui-tabBar-item-icon">
+		                    <i class="icon icon-mine"></i>
+		                </span>
+		                <span class="footer_tabbar_text">我的</span>
+		            </a>
+	        	</footer>
+            </section>
+        </section>
+	</body>
+</html>
+<script type="text/javascript">
+	get_all_paidan("table_priority_area", "1", ""); // 优选区数据
+	get_all_paidan("table_random_area", "2", ""); // 随机区数据
+	get_jiaoge_time(); // 上次交割时间
+	get_search_times();
+	// 触摸触发更新时间
+	$('body').on('touchend',function(){
+        set_operate_time();
+    })
+	// 每三小时刷新随机取数据
+	setInterval(function(){
+		get_all_paidan("table_random_area", "2", "");
+	},1000*3600*3);
+</script>

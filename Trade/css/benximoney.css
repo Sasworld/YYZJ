@@ -1,0 +1,51 @@
+.main_div{
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.benxi_title{
+	color: #FF9900;
+	text-align: center;
+	font-size: 1.5em;
+	margin-top: 20px;
+}
+
+.benxi_title img{
+	position: absolute;
+	left: 2%;
+	width: 25px;
+	height: 25px;
+}
+
+.total_money{
+	flex: 1;
+	margin: 0 auto;
+	margin-top: 30px;
+	padding: 10px;
+	color: white;
+	font-size: 6vw;
+}
+
+.trading_money_list{
+	flex: 20;
+	margin: 10px;
+	background-color: white;
+	border-radius: 10px;
+	height: 100%;
+	overflow-y: scroll;
+}
+
+.table_trading_list{
+	border-spacing:0px 10px;
+	border: 0px solid #b5b5b5;
+	text-align: center;
+	font-size: 3vw;
+	width: 100%;
+}
+
+.table_trading_list td{
+	font-size: 2.5vw;
+	color: #979797;
+}
+

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport"/>
+        <meta content="yes" name="apple-mobile-web-app-capable"/>
+        <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+        <meta content="telephone=no" name="format-detection"/>
+		<link rel="stylesheet" type="text/css" href="css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="css/mine.css"/>
+		<link rel="stylesheet" type="text/css" href="css/footer.css"/>
+        <script src="js/jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script>
+        <script type="text/javascript" src="js/common.js" ></script>
+        <script type="text/javascript">
+			check_login_state();
+		</script>
+	</head>
+	<body>
+		<section class="main_framework">
+			<div class="page_title">
+				<span>我</span>
+			</div>
+            <section class="content_view">
+				<div class="item_list">
+					<div class="one_item" onclick="window.open('myinfo.html','_self')">
+						<div class="icon_in_item">
+				            <img src="images/selfinfo.png" alt="">
+				        </div>
+				        <div class="text_in_item">
+				                        我的信息
+				        </div>
+				        <div class="tip_in_item">
+				            <p></p>
+				        </div>	
+					</div>
+					<div class="one_item" onclick="window.open('sponsoredlink.html','_self')">
+						<div class="icon_in_item">
+				            <img src="images/lianjie.png" alt="">
+				        </div>
+				        <div class="text_in_item">
+				                        推广链接
+				        </div>
+				        <div class="tip_in_item">
+				            <p></p>
+				        </div>	
+					</div>
+					<div class="one_item" onclick="window.open('fasthand.html','_self')">
+						<div class="icon_in_item">
+				            <img src="images/flash.png" alt="">
+				        </div>
+				        <div class="text_in_item">
+				        	快抢手
+				        </div>
+				        <div class="tip_in_item">
+				            <p></p>
+				        </div>	
+					</div>
+					<div class="one_item" onclick="window.open('tranferactivecode.html','_self')">
+						<div class="icon_in_item">
+				            <img src="images/money1.png" alt="">
+				        </div>
+				        <div class="text_in_item">
+				        	激活码转账
+				        </div>
+				        <div class="tip_in_item">
+				            <p></p>
+				        </div>	
+					</div>
+					<div class="one_item" onclick="window.open('tranferpaidancorn.html','_self')">
+						<div class="icon_in_item">
+				            <img src="images/money.png" alt="">
+				        </div>
+				        <div class="text_in_item">
+				        	排单币转账
+				        </div>
+				        <div class="tip_in_item">
+				            <p></p>
+				        </div>	
+					</div>
+					<div class="one_item" onclick="window.open('alterpw.html','_self')">
+						<div class="icon_in_item">
+				            <img src="images/alterpw.png" alt="">
+				        </div>
+				        <div class="text_in_item">
+				        	修改密码
+				        </div>
+				        <div class="tip_in_item">
+				            <p></p>
+				        </div>	
+					</div>
+					<div class="one_item" onclick="quit_account()">
+						<div class="icon_in_item">
+				            <img src="images/quit.png" alt="">
+				        </div>
+				        <div class="text_in_item">
+				        	退出账户
+				        </div>
+				        <div class="tip_in_item">
+				            <p></p>
+				        </div>	
+					</div>
+				</div>
+	        </section>
+	        <section class="footer_view">
+		        <footer class="aui-footer aui-footer-fixed">
+		            <a href="home.html" class="aui-tabBar-item">
+		                <span class="aui-tabBar-item-icon">
+		                    <i class="icon icon-home"></i>
+		                </span>
+		                <span class="footer_tabbar_text">首页</span>
+		            </a>
+		            <a href="trade.html" class="aui-tabBar-item">
+		                <span class="aui-tabBar-item-icon">
+		                    <i class="icon icon-trade"></i>
+		                </span>
+		                <span class="footer_tabbar_text">交易区</span>
+		            </a>
+		            <!--<a href="data.html" class="aui-tabBar-item ">
+		                <span class="aui-tabBar-item-icon">
+		                    <i class="icon icon-data"></i>
+		                </span>
+		                <span class="footer_tabbar_text">数据区</span>
+		            </a>-->
+		            <a href="mine.html" class="aui-tabBar-item">
+		                <span class="aui-tabBar-item-icon">
+		                    <i class="icon icon-mine-selected"></i>
+		                </span>
+		                <span class="footer_tabbar_text_selected">我的</span>
+		            </a>
+	        	</footer>
+	        </section>
+        </section>
+	</body>
+</html>
+<script type="text/javascript">
+	// 触摸触发更新时间
+	$('body').on('touchend',function(){
+        set_operate_time();
+    })
+</script>
